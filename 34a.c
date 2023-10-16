@@ -32,7 +32,7 @@ int main(void) {
         } else {
             close(sd);
             printf("Client connected\n");
-            int buff[80];
+            char buff[80];
             read(nsd, buff, sizeof(buff));
             printf("Message from client: %s\n", buff);
             write(nsd, "ACK\n", 4);

@@ -18,7 +18,7 @@ Date: 12th Oct, 2023.
 void *handleClient(void *arg) {
     int *client_socket = (int *) arg;
     printf("Client connected\n");
-    int buff[80];
+    char buff[80];
     read(*client_socket, buff, sizeof(buff));
     printf("Message from client: %s\n", buff);
     write(*client_socket, "ACK\n", 4);
@@ -41,5 +41,5 @@ int main(void) {
         pthread_create(&tid, NULL, handleClient, &nsd);
     }
 
-    return 0;
+    return 0;      
 }
